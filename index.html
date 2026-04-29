@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Today</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ac2bcace36.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="card">
+        <div class="search-bar">
+            <input type="text" name="city" id="city" placeholder="City">
+            <button type="button" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <img src="./image/sunny-cloudy-weather.avif" alt="">
+        <h1>21°C</h1>
+        <h3>New York</h3>
+        <div class="extra-content">
+            <div class="humidity">
+                <img src="./image/humidity.png" alt="">
+                <div class="humidity-data">
+                    <h4>64%</h4>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="wind-speed">
+                <img src="./image/wind speed.png" alt="">
+                    <div class="wind-speed-data">
+                    <h4><span>18</span> km/h</h4>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

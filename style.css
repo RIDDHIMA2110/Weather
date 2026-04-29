@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+html,
+body{
+    font-family: "Roboto", sans-serif;
+    line-height: 1.4;
+
+}
+body{
+    background: url(./image/background.avif);
+    min-height: 100dvh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;justify-content: center;
+    align-items: center;
+    
+}
+.card{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter:blur(10px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    margin: 0;
+    display: flex;
+    width: 90%;
+    max-width: 50rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 2rem;
+}
+.search-bar{
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+.search-bar input{
+    height: 5rem;
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 0.2rem solid lightgray;
+    border-radius: 5rem;
+    padding: 1rem;
+    color: #fff;
+    font-size: clamp(0.5rem, 5vw ,2rem);
+    min-width: 0;
+}
+.search-bar input::placeholder{
+    color:white;
+    opacity: 0.5;
+}
+.search-bar button{
+    flex-shrink: 0;
+    height: clamp(4rem, 5vw ,5rem);
+    width: clamp(4rem, 5vw ,5rem);
+    font-size: clamp(1.5rem, 5vw ,3rem);
+    border-radius: 50%;
+    border: none;  
+    transition: 0.2s ease-in-out;
+    background-color: #fff;
+    box-shadow: 0 0 0.5rem rgba(0,0,0,0.2);
+}
+.search-bar button:hover{
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.card img{
+    height: auto;
+    max-width: 40%;
+    width: 13rem;
+    margin-top: 4rem;
+}
+.card h1{
+    font-size: mp(1rem, 6vw ,2rem)mp(3rem,6vw,5.5rem);
+    color: #fff;
+}
+.card h3{
+    font-size: 3rem;
+    color: #fff;
+}
+.extra-content{
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.extra-content img{
+    height: 7rem;
+    width: auto;
+}
+.humidity,
+.wind-speed{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.humidity-data,
+.wind-speed-data{
+    display: flex;
+    flex-direction: column;
+}
+.humidity-data h4,
+.wind-speed-data h4{
+    font-size: 2.5rem;
+    color: #fff;
+}
+.humidity-data p,
+.wind-speed-data p{
+    font-size: 2.5rem;
+    color: #fff;
+}
