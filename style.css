@@ -47,7 +47,7 @@ body{
 .search-bar input{
     height: 5rem;
     flex: 1;
-    background: transparent;
+    background: inherit;
     border: none;
     outline: none;
     border: 0.2rem solid lightgray;
@@ -69,7 +69,8 @@ body{
     border-radius: 50%;
     border: none;  
     transition: 0.2s ease-in-out;
-    background-color: #fff;
+    background-color: inherit;
+    color:white;
     box-shadow: 0 0 0.5rem rgba(0,0,0,0.2);
 }
 .search-bar button:hover{

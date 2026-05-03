@@ -1,5 +1,6 @@
-const url="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-const apikey="4d0c7a733a065b013036d333d54c9dd5";
+import { url, apikey } from "./utils.js";
+console.log("url"+ url);
+console.log("api"+ apikey);
 let btn=document.querySelector("#search-btn");
 const printData= (data) =>{
     let extraContent=document.querySelector(".extra-content");
