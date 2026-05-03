@@ -84,20 +84,21 @@ body{
     margin-top: 4rem;
 }
 .card h1{
-    font-size: mp(1rem, 6vw ,2rem)mp(3rem,6vw,5.5rem);
+    font-size: clamp(3rem,6vw,5.5rem);
     color: #fff;
 }
 .card h3{
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw ,4rem);
     color: #fff;
 }
 .extra-content{
+    display: none;
     margin-top: 3rem;
-    display: flex;
     gap: 2rem;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: row;
 }
 .extra-content img{
     height: 7rem;
