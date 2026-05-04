@@ -1,20 +1,33 @@
 import { url, apikey } from "./utils.js";
 let btn=document.querySelector("#search-btn");
+const ui ={
+    extraContent: document.querySelector(".extra-content"),
+    image: document.querySelector(".card img"),
+    temp: document.querySelector(".card h1"),
+    citytag: document.querySelector(".card h3"),
+    humidity: document.querySelector(".humidity h4"),
+    wind: document.querySelector(".wind-speed h4"),
+    error: document.querySelector(".error")
+};
+console.log(ui);
 const printData= (data) =>{
-    let extraContent=document.querySelector(".extra-content");
-    extraContent.style.display="flex";
-    let image=document.querySelector(".card img");
+    ui.extraContent.style.display="flex";
     const icon=data.weather[0].icon;
-    image.src=`https://openweathermap.org/img/wn/${icon}@2x.png`;
-    image.title=data.weather[0].description;
-    let temp=document.querySelector(".card h1");
-    temp.innerHTML=data.main.temp.toFixed(0)+"°C";
-    let citytag=document.querySelector(".card h3");
-    citytag.innerHTML=data.name;
-    let humidity=document.querySelector(".humidity h4");
-    humidity.innerHTML=data.main.humidity + "%";
-    let wind=document.querySelector(".wind-speed h4");
-    wind.innerHTML=(data.wind.speed*3.6).toFixed(0)+" km/h";
+    ui.image.src=`https://openweathermap.org/img/wn/${icon}@2x.png`;
+    ui.image.title=data.weather[0].description;
+    ui.temp.innerHTML=data.main.temp.toFixed(0)+"°C";
+    ui.citytag.innerHTML=data.name;
+    ui.humidity.innerHTML=data.main.humidity + "%";
+    ui.wind.innerHTML=(data.wind.speed*3.6).toFixed(0)+" km/h";
+}
+const resetUI=()=>{
+    ui.extraContent.style.display="none";
+    ui.image.src="";
+    ui.image.title="";
+    ui.temp.innerHTML="";
+    ui.citytag.innerHTML="";
+    ui.humidity.innerHTML="";
+    ui.wind.innerHTML="";
 }
 async function checkWeather(city){
     try{
@@ -26,22 +39,29 @@ async function checkWeather(city){
         printData(data);
     }
     catch(e){
-       document.querySelector(".error").innerHTML=e.message || "Network or API issue";
+        resetUI();
+        ui.error.style.display="block";
+        ui.error.innerHTML=(e.message || "Network or API issue") + " !!";
     }
 }
-document.querySelector("#city").addEventListener("keypress",(e)=>{
+document.querySelector("#city").addEventListener("keydown",(e)=>{
     if(e.key=="Enter"){
         btn.click();
     }
 });
-btn.addEventListener("click",()=>{
+btn.addEventListener("click",async()=>{
     btn.disabled=true;
     let city= document.querySelector("#city").value;
-    if(city.trim()==""){
-        document.querySelector(".error").innerHTML="Enter Valid City Name";
+    if(city.trim()===""){
+        resetUI();
+        ui.error.style.display="block";
+        ui.error.innerHTML="Enter Valid City Name!!";
+        btn.disabled=false;
+        return;
     }
-    else{
-        checkWeather(city);
-    }
+    ui.error.style.display="none";  
+    ui.error.innerHTML="";
+    await checkWeather(city);
     btn.disabled=false;
+    
 });
