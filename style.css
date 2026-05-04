@@ -11,7 +11,6 @@ html,
 body{
     font-family: "Roboto", sans-serif;
     line-height: 1.4;
-
 }
 body{
     background: url(./image/background.avif);
@@ -20,8 +19,7 @@ body{
     background-size: cover;
     background-position: center;
     display: flex;justify-content: center;
-    align-items: center;
-    
+    align-items: center;   
 }
 .card{
     background: rgba(255, 255, 255, 0.1);

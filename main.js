@@ -1,6 +1,4 @@
 import { url, apikey } from "./utils.js";
-console.log("url"+ url);
-console.log("api"+ apikey);
 let btn=document.querySelector("#search-btn");
 const printData= (data) =>{
     let extraContent=document.querySelector(".extra-content");
@@ -9,7 +7,6 @@ const printData= (data) =>{
     const icon=data.weather[0].icon;
     image.src=`https://openweathermap.org/img/wn/${icon}@2x.png`;
     image.title=data.weather[0].description;
-    console.log(icon);
     let temp=document.querySelector(".card h1");
     temp.innerHTML=data.main.temp.toFixed(0)+"°C";
     let citytag=document.querySelector(".card h3");
@@ -44,7 +41,6 @@ btn.addEventListener("click",()=>{
         document.querySelector(".error").innerHTML="Enter Valid City Name";
     }
     else{
-        console.log(city);
         checkWeather(city);
     }
     btn.disabled=false;
